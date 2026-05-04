@@ -46,9 +46,12 @@
             position: relative;
             width: 210mm;
             height: 297mm;
-            background: var(--paper);
+            background:
+                radial-gradient(ellipse at 50% 45%, #b81616 0%, #7a0d0d 55%, #3a0606 100%);
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
         /* Decorative radioactive corners */
@@ -58,8 +61,8 @@
             position: absolute;
             width: 260mm;
             height: 260mm;
-            background: radial-gradient(circle at center, transparent 38%, var(--red) 38.5%, var(--red) 39.5%, transparent 40%);
-            opacity: 0.12;
+            background: radial-gradient(circle at center, transparent 38%, #ffd2d2 38.5%, #ffd2d2 39.5%, transparent 40%);
+            opacity: 0.10;
             pointer-events: none;
         }
 
@@ -129,31 +132,33 @@
             font-family: 'Special Elite', monospace;
             font-size: 10pt;
             letter-spacing: 0.3em;
-            color: var(--red-dark);
+            color: var(--gold);
             text-transform: uppercase;
             margin-bottom: 2mm;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
         }
 
         .club-name {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 40pt;
             line-height: 0.95;
-            color: var(--red);
+            color: var(--cream);
             letter-spacing: 0.06em;
             text-shadow:
                 2px 2px 0 var(--black),
-                0 0 14px rgba(238, 36, 36, 0.25);
+                0 0 18px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle-club {
             font-size: 9.5pt;
             font-weight: 300;
-            color: #555;
+            color: rgba(255, 244, 220, 0.85);
             margin-top: 1.5mm;
             letter-spacing: 0.05em;
             max-width: 150mm;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
         }
 
         /* Hero number */
@@ -166,30 +171,46 @@
         .hero-pre {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 24pt;
-            color: var(--black);
+            color: var(--cream);
             letter-spacing: 0.15em;
             line-height: 1;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
         }
 
         .hero-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 130pt;
             line-height: 0.85;
-            color: var(--red);
-            text-shadow:
-                4px 4px 0 var(--black),
-                8px 8px 0 rgba(17, 17, 17, 0.15);
             letter-spacing: -0.02em;
-            display: block;
+            display: inline-block;
             margin: 1mm 0;
+            color: var(--gold);
+            background: linear-gradient(180deg,
+                #fff8d8 0%,
+                #ffe98a 12%,
+                #f4c842 28%,
+                #c8941f 50%,
+                #6b4408 72%,
+                #c8941f 86%,
+                #ffe98a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter:
+                drop-shadow(2px 2px 0 #6b4408)
+                drop-shadow(4px 4px 0 #3d2604)
+                drop-shadow(6px 8px 10px rgba(0, 0, 0, 0.55))
+                drop-shadow(0 0 6mm rgba(255, 220, 130, 0.65))
+                drop-shadow(0 0 2mm rgba(255, 245, 200, 0.7));
         }
 
         .hero-post {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 30pt;
-            color: var(--black);
+            color: var(--cream);
             letter-spacing: 0.25em;
             line-height: 1;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
         }
 
         .hero-tag {
@@ -202,6 +223,7 @@
             font-size: 11pt;
             letter-spacing: 0.2em;
             transform: rotate(-1.5deg);
+            box-shadow: 0 1mm 0 rgba(0, 0, 0, 0.4);
         }
 
         /* Info row */
@@ -213,18 +235,19 @@
         }
 
         .info-card {
-            background: var(--black);
+            background: rgba(0, 0, 0, 0.85);
             color: var(--cream);
             padding: 4mm 3mm;
             text-align: center;
-            border-top: 2mm solid var(--red);
+            border-top: 2mm solid var(--red-bright);
+            box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.35);
         }
 
         .info-label {
             font-family: 'Special Elite', monospace;
             font-size: 12pt;
             letter-spacing: 0.2em;
-            color: var(--red);
+            color: var(--red-bright);
             text-transform: uppercase;
             margin-bottom: 2mm;
         }
@@ -245,7 +268,7 @@
 
         /* Description */
         .desc {
-            background: rgba(255, 255, 255, 0.6);
+            background: var(--paper);
             border-left: 3mm solid var(--red);
             padding: 3mm 5mm;
             margin: 3mm 0;
@@ -254,6 +277,7 @@
             color: #2a2a2a;
             font-weight: 300;
             text-align: justify;
+            box-shadow: 0 2mm 8mm rgba(0, 0, 0, 0.3);
         }
 
         .desc p + p {
