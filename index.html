@@ -79,17 +79,21 @@
         /* Diagonal stripe header */
         .stripe {
             position: absolute;
-            top: 0;
             left: 0;
             right: 0;
             height: 6mm;
-            background: repeating-linear-gradient(
+            top: 0;
+            background-color: var(--black);
+            background-image: repeating-linear-gradient(
                 45deg,
                 var(--black) 0,
                 var(--black) 10mm,
                 var(--red) 10mm,
                 var(--red) 20mm
             );
+            background-position: 0 0;
+            background-repeat: repeat;
+            z-index: 4;
         }
 
         .stripe.bottom {
