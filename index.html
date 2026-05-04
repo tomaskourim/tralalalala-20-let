@@ -20,11 +20,13 @@
         }
 
         :root {
-            --red: #d92525;
-            --red-dark: #a51818;
+            --red: #ee2424;
+            --red-bright: #ff3838;
+            --red-dark: #b81616;
             --black: #111111;
-            --cream: #f6efe1;
-            --paper: #fbf6ea;
+            --cream: #fff4dc;
+            --paper: #fffaee;
+            --gold: #f4c842;
         }
 
         html, body {
@@ -57,7 +59,7 @@
             width: 260mm;
             height: 260mm;
             background: radial-gradient(circle at center, transparent 38%, var(--red) 38.5%, var(--red) 39.5%, transparent 40%);
-            opacity: 0.08;
+            opacity: 0.12;
             pointer-events: none;
         }
 
@@ -95,7 +97,7 @@
         .content {
             position: relative;
             z-index: 2;
-            padding: 16mm 14mm 12mm 14mm;
+            padding: 10mm 14mm 12mm 14mm;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -103,20 +105,24 @@
 
         .header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10mm;
-            margin-bottom: 6mm;
+            text-align: center;
+            gap: 2mm;
+            margin-bottom: 2mm;
         }
 
         .logo {
-            width: 42mm;
-            height: 42mm;
+            width: 58mm;
+            height: 58mm;
             flex-shrink: 0;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+            filter:
+                drop-shadow(0 3px 10px rgba(0, 0, 0, 0.3))
+                drop-shadow(0 0 6mm rgba(238, 36, 36, 0.25));
         }
 
         .header-text {
-            flex: 1;
+            width: 100%;
         }
 
         .eyebrow {
@@ -130,10 +136,13 @@
 
         .club-name {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 32pt;
+            font-size: 40pt;
             line-height: 0.95;
-            color: var(--black);
-            letter-spacing: 0.04em;
+            color: var(--red);
+            letter-spacing: 0.06em;
+            text-shadow:
+                2px 2px 0 var(--black),
+                0 0 14px rgba(238, 36, 36, 0.25);
         }
 
         .subtitle-club {
@@ -142,18 +151,21 @@
             color: #555;
             margin-top: 1.5mm;
             letter-spacing: 0.05em;
+            max-width: 150mm;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Hero number */
         .hero {
             text-align: center;
-            margin: 4mm 0 6mm 0;
+            margin: 2mm 0 4mm 0;
             position: relative;
         }
 
         .hero-pre {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 28pt;
+            font-size: 24pt;
             color: var(--black);
             letter-spacing: 0.15em;
             line-height: 1;
@@ -161,7 +173,7 @@
 
         .hero-number {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 180pt;
+            font-size: 130pt;
             line-height: 0.85;
             color: var(--red);
             text-shadow:
@@ -169,12 +181,12 @@
                 8px 8px 0 rgba(17, 17, 17, 0.15);
             letter-spacing: -0.02em;
             display: block;
-            margin: 2mm 0;
+            margin: 1mm 0;
         }
 
         .hero-post {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 36pt;
+            font-size: 30pt;
             color: var(--black);
             letter-spacing: 0.25em;
             line-height: 1;
@@ -197,7 +209,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 4mm;
-            margin: 6mm 0;
+            margin: 4mm 0;
         }
 
         .info-card {
@@ -235,10 +247,10 @@
         .desc {
             background: rgba(255, 255, 255, 0.6);
             border-left: 3mm solid var(--red);
-            padding: 4mm 5mm;
-            margin: 4mm 0;
-            font-size: 10.5pt;
-            line-height: 1.45;
+            padding: 3mm 5mm;
+            margin: 3mm 0;
+            font-size: 10pt;
+            line-height: 1.4;
             color: #2a2a2a;
             font-weight: 300;
             text-align: justify;
@@ -258,12 +270,10 @@
             position: absolute;
             left: 14mm;
             right: 14mm;
-            bottom: 9mm;
+            bottom: 8mm;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 4mm;
-            border-top: 1px dashed rgba(0, 0, 0, 0.25);
         }
 
         .fb-block {
