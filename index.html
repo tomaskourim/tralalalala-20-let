@@ -350,6 +350,7 @@
         }
 
         .qr {
+            position: relative;
             width: 32mm;
             height: 32mm;
             background: white;
@@ -363,6 +364,50 @@
             height: 100%;
             display: block;
         }
+
+        /* Scanner-style corner brackets around the QR */
+        .qr-bracket {
+            position: absolute;
+            width: 6mm;
+            height: 6mm;
+            pointer-events: none;
+        }
+
+        .qr-bracket::before,
+        .qr-bracket::after {
+            content: "";
+            position: absolute;
+            background: var(--red-bright);
+            box-shadow: 0 0 1mm rgba(0, 0, 0, 0.35);
+        }
+
+        /* Horizontal arm of the L */
+        .qr-bracket::before {
+            height: 0.5mm;
+            width: 100%;
+        }
+
+        /* Vertical arm of the L */
+        .qr-bracket::after {
+            width: 0.5mm;
+            height: 100%;
+        }
+
+        .qr-bracket.tl { top: -3.5mm; left: -3.5mm; }
+        .qr-bracket.tl::before { top: 0; left: 0; }
+        .qr-bracket.tl::after  { top: 0; left: 0; }
+
+        .qr-bracket.tr { top: -3.5mm; right: -3.5mm; }
+        .qr-bracket.tr::before { top: 0; right: 0; }
+        .qr-bracket.tr::after  { top: 0; right: 0; }
+
+        .qr-bracket.bl { bottom: -3.5mm; left: -3.5mm; }
+        .qr-bracket.bl::before { bottom: 0; left: 0; }
+        .qr-bracket.bl::after  { bottom: 0; left: 0; }
+
+        .qr-bracket.br { bottom: -3.5mm; right: -3.5mm; }
+        .qr-bracket.br::before { bottom: 0; right: 0; }
+        .qr-bracket.br::after  { bottom: 0; right: 0; }
 
         /* Decorative background layer (pitch + atom contours) */
         .deco {
@@ -540,6 +585,10 @@
             <div class="footer">
                 <div class="fb-block">
                     <div class="qr">
+                        <span class="qr-bracket tl"></span>
+                        <span class="qr-bracket tr"></span>
+                        <span class="qr-bracket bl"></span>
+                        <span class="qr-bracket br"></span>
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.facebook.com/events/1115388380223950&margin=0" alt="QR kód na Facebook event">
                     </div>
                     <div class="fb-text">
